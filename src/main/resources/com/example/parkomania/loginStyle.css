@@ -1,0 +1,15 @@
+#mainScene {
+    -fx-border-color:  #FF3131;
+    -fx-border-width: 14;
+    -fx-background-color: #FFFFFF;
+}
+#loginBtn {
+    -fx-background-color: #FF3131;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+}
+#registerBtn {
+    -fx-border-width: 2;
+    -fx-border-color:  #FF3131;
+    -fx-background-color: #FFFFFF;
+}

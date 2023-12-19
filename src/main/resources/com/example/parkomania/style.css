@@ -1,0 +1,46 @@
+#mainScene {
+    -fx-border-color:  #FF3131;
+    -fx-border-width: 14;
+    -fx-background-color: #FFFFFF;
+}
+#backgroundBtn {
+    -fx-background-color: #FF3131;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+}
+#whiteBtn {
+    -fx-border-width: 2;
+    -fx-border-color:  #FF3131;
+    -fx-background-color: #FFFFFF;
+}
+#transparentMiniBtn {
+    -fx-background-color: transparent;
+    -fx-max-height: 30;
+    -fx-max-width: 30;
+    -fx-min-height: 30;
+    -fx-min-width: 30;
+}
+#plusAndMinusBtn {
+    -fx-background-color: transparent;
+    -fx-max-height: 75;
+    -fx-max-width: 75;
+    -fx-min-height: 75;
+    -fx-min-width: 75;
+}
+#startAndStopBtn {
+    -fx-background-color: transparent;
+    -fx-max-height: 100;
+    -fx-max-width: 100;
+    -fx-min-height: 100;
+    -fx-min-width: 100;
+}
+#infoLabel {
+    -fx-text-alignment: center;
+}
+#transparentCalendarBtn {
+    -fx-background-color: transparent;
+    -fx-max-height: 50;
+    -fx-max-width: 50;
+    -fx-min-height: 50;
+    -fx-min-width: 50;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane id="mainScene"
+            stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.parkomania.Account"
+            prefHeight="572.0" prefWidth="812.0">
+    <children>
+        <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/ParkoMania-robocza.png" />
+            </image>
+        </ImageView>
+        <Button id="loginBtn" layoutX="276.0" layoutY="53.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Mapa" textFill="WHITE">
+            <font>
+                <Font name="Lato Regular" size="24.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/20231219_161926_0015.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Text fill="#ff3131" layoutX="272.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kliknij w wybrane miejsce parkingowe, aby je zarezerwować " textAlignment="CENTER" wrappingWidth="268.8984375">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Text>
+        <Button id="transparentMiniBtn" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@style.css">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/go-back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

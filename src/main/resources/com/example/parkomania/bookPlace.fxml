@@ -35,9 +35,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button id="startAndStopBtn" layoutX="357.0" layoutY="242.0" mnemonicParsing="false" stylesheets="@style.css">
+      <Button id="startAndStopBtn" fx:id="startAndStopBtn" layoutX="357.0" layoutY="242.0" mnemonicParsing="false" onAction="#startCounting" stylesheets="@style.css">
          <graphic>
-            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="startAndStopImg" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/start.png" />
                </image>

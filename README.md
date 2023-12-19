@@ -1,2 +1,2 @@
 # ParkoMania
-Parking place reservation app
+Parking spaces booking app

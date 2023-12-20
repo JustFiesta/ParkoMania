@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="250.0" fitWidth="333.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/ParkoMania-robocza.png" />
+                  <Image url="@images/logo.png" />
                </image>
             </ImageView>
             <Button id="backgroundBtn" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Zaloguj się" textFill="WHITE">

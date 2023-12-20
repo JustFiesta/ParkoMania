@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="812.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="mainScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="812.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parkomania.MainMenuController">
    <children>
       <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/ParkoMania-robocza.png" />
+            <Image url="@images/logo.png" />
          </image>
       </ImageView>
       <VBox layoutX="276.0" layoutY="166.0" prefHeight="192.0" prefWidth="260.0" spacing="25.0">
          <children>
-             <Button id="whiteBtn" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Mapa" textFill="#ff3131">
+             <Button id="whiteBtn" fx:id="goToMap" mnemonicParsing="false" onAction="#goToMap" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Mapa" textFill="#ff3131">
                  <font>
                      <Font name="Lato Regular" size="24.0" />
                  </font>
@@ -28,7 +28,7 @@
                   </ImageView>
                </graphic>
              </Button>
-            <Button id="whiteBtn" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Powiadomienia" textFill="#ff3131">
+            <Button id="whiteBtn" fx:id="goToNotifications" mnemonicParsing="false" onAction="#goToNotifications" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Powiadomienia" textFill="#ff3131">
                <font>
                   <Font name="Lato Regular" size="24.0" />
                </font>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="whiteBtn" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Moje konto" textFill="#ff3131">
+            <Button id="whiteBtn" fx:id="goToAccount" mnemonicParsing="false" onAction="#goToAccount" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Moje konto" textFill="#ff3131">
                <font>
                   <Font name="Lato Regular" size="24.0" />
                </font>

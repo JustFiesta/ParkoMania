@@ -44,3 +44,10 @@
     -fx-min-height: 50;
     -fx-min-width: 50;
 }
+#hamburgerBtn {
+    -fx-background-color: transparent;
+    -fx-max-height: 25;
+    -fx-max-width: 40;
+    -fx-min-height: 25;
+    -fx-min-width: 40;
+}

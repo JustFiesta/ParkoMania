@@ -3,31 +3,20 @@ package com.example.parkomania;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class BookPlaceController {
+import static com.example.parkomania.HelloApplication.sceneManager;
 
-    @FXML
-    private Label choosingTimer;
+public class NotificationsController {
 
     @FXML
     private Button goBackBtn;
 
     @FXML
-    private Button startAndStopBtn;
-
-    @FXML
-    private ImageView startAndStopImg;
+    private Button showMoreNotaficationsBtn;
 
     @FXML
     void goBack(ActionEvent event) {
-
+        sceneManager.switchScene("mainMenu");
     }
-
-    @FXML
-    void startCounting(ActionEvent event) {
-
-    }
-
 }

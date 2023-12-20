@@ -14,7 +14,7 @@
     <children>
         <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/ParkoMania-robocza.png" />
+                <Image url="@images/logo.png" />
             </image>
         </ImageView>
         <Button id="backgroundBtn" layoutX="276.0" layoutY="53.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Mapa" textFill="WHITE">
@@ -29,11 +29,11 @@
                 </ImageView>
             </graphic>
         </Button>
-      <HBox layoutX="242.0" layoutY="226.0" prefHeight="60.0" prefWidth="329.0">
+      <HBox layoutX="216.0" layoutY="226.0" prefHeight="60.0" prefWidth="370.0" spacing="10.0">
          <children>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#bookPlace1" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place1" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -42,7 +42,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#bookPlace2" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place2" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -51,7 +51,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place3" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -60,7 +60,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place4" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -69,7 +69,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place5" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -78,7 +78,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place6" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -87,7 +87,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place7" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -98,18 +98,18 @@
                </graphic>
             </Button>
          </children></HBox>
-      <Label layoutX="259.0" layoutY="209.0" prefHeight="16.0" prefWidth="7.0" text="1" textFill="#ff3131" />
-      <Label layoutX="309.0" layoutY="209.0" prefHeight="16.0" prefWidth="7.0" text="2" textFill="#ff3131" />
-      <Label layoutX="357.0" layoutY="209.0" prefHeight="16.0" prefWidth="7.0" text="3" textFill="#ff3131" />
-      <Label layoutX="403.0" layoutY="211.0" prefHeight="16.0" prefWidth="7.0" text="4" textFill="#ff3131" />
-      <Label layoutX="498.0" layoutY="211.0" prefHeight="16.0" prefWidth="7.0" text="6" textFill="#ff3131" />
-      <Label layoutX="450.0" layoutY="211.0" prefHeight="16.0" prefWidth="7.0" text="5" textFill="#ff3131" />
-      <Label layoutX="541.0" layoutY="211.0" prefHeight="16.0" prefWidth="7.0" text="7" textFill="#ff3131" />
-      <HBox layoutX="246.0" layoutY="341.0" prefHeight="60.0" prefWidth="329.0">
+      <Label layoutX="236.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="1" textFill="#ff3131" />
+      <Label layoutX="292.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="2" textFill="#ff3131" />
+      <Label layoutX="354.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="3" textFill="#ff3131" />
+      <Label layoutX="407.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="4" textFill="#ff3131" />
+      <Label layoutX="525.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="6" textFill="#ff3131" />
+      <Label layoutX="462.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="5" textFill="#ff3131" />
+      <Label layoutX="581.0" layoutY="203.0" prefHeight="16.0" prefWidth="7.0" text="7" textFill="#ff3131" />
+      <HBox layoutX="216.0" layoutY="351.0" prefHeight="60.0" prefWidth="389.0" spacing="10.0">
          <children>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place8" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -118,7 +118,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place9" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -127,7 +127,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place10" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -136,7 +136,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place11" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -145,7 +145,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place12" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -154,7 +154,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place13" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -163,7 +163,7 @@
             </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="47.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView id="placeBtn" fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="placeBtn" fx:id="place14" fitHeight="75.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/20231219_161926_0008.png" />
                      </image>
@@ -172,28 +172,28 @@
             </Button>
          </children>
       </HBox>
-      <HBox layoutX="210.0" layoutY="286.0" prefHeight="40.0" prefWidth="400.0">
+      <HBox layoutX="155.0" layoutY="288.0" prefHeight="40.0" prefWidth="400.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="84.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/20231219_161926_0009.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="95.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/20231219_161926_0009.png" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <Label layoutX="266.0" layoutY="401.0" prefHeight="16.0" prefWidth="7.0" text="8" textFill="#ff3131" />
-      <Label layoutX="316.0" layoutY="401.0" prefHeight="16.0" prefWidth="7.0" text="9" textFill="#ff3131" />
-      <Label layoutX="356.0" layoutY="401.0" prefHeight="17.0" prefWidth="16.0" text="10" textFill="#ff3131" />
-      <Label layoutX="403.0" layoutY="401.0" prefHeight="17.0" prefWidth="16.0" text="11" textFill="#ff3131" />
-      <Label layoutX="497.0" layoutY="401.0" prefHeight="17.0" prefWidth="16.0" text="13" textFill="#ff3131" />
-      <Label layoutX="449.0" layoutY="401.0" prefHeight="17.0" prefWidth="16.0" text="12" textFill="#ff3131" />
-      <Label layoutX="545.0" layoutY="401.0" prefHeight="17.0" prefWidth="16.0" text="14" textFill="#ff3131" />
-      <ImageView fitHeight="17.0" fitWidth="47.0" layoutX="619.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="236.0" layoutY="415.0" prefHeight="16.0" prefWidth="7.0" text="8" textFill="#ff3131" />
+      <Label layoutX="295.0" layoutY="415.0" prefHeight="16.0" prefWidth="7.0" text="9" textFill="#ff3131" />
+      <Label layoutX="349.0" layoutY="415.0" prefHeight="17.0" prefWidth="16.0" text="10" textFill="#ff3131" />
+      <Label layoutX="402.0" layoutY="415.0" prefHeight="17.0" prefWidth="16.0" text="11" textFill="#ff3131" />
+      <Label layoutX="520.0" layoutY="415.0" prefHeight="17.0" prefWidth="16.0" text="13" textFill="#ff3131" />
+      <Label layoutX="461.0" layoutY="415.0" prefHeight="17.0" prefWidth="16.0" text="12" textFill="#ff3131" />
+      <Label layoutX="576.0" layoutY="415.0" prefHeight="17.0" prefWidth="16.0" text="14" textFill="#ff3131" />
+      <ImageView fitHeight="17.0" fitWidth="47.0" layoutX="605.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/20231219_161926_0010.png" />
          </image>
@@ -207,12 +207,12 @@
             </Label>
          </children>
       </VBox>
-      <Button id="registerBtn" fx:id="reserveBtn" alignment="CENTER" disable="true" layoutX="102.0" layoutY="130.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="124.0" stylesheets="@style.css" text="REZERWUJ MIEJSCE" textAlignment="CENTER" textFill="#ff3131" visible="false" wrapText="true">
+      <Button id="whiteBtn" fx:id="reservePlace" alignment="CENTER" disable="true" layoutX="102.0" layoutY="130.0" mnemonicParsing="false" onAction="#reservePlace" prefHeight="60.0" prefWidth="124.0" stylesheets="@style.css" text="REZERWUJ MIEJSCE" textAlignment="CENTER" textFill="#ff3131" visible="false" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button id="transparentMiniBtn" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@style.css">
+      <Button id="transparentMiniBtn" fx:id="goBackBtn" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBack" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@style.css">
          <graphic>
               <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                   <image>

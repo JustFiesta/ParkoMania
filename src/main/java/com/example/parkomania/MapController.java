@@ -103,7 +103,7 @@ public class MapController {
     // sends request, checks if place is free and locks it for some time
     @FXML
     void reservePlace(ActionEvent event) {
-        System.out.println("Reserving");
+        sceneManager.switchScene("bookPlace");
     }
 
     //go back to previous scene

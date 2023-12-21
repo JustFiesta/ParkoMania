@@ -46,6 +46,5 @@
             </VBox>
          </children>
         </VBox>
-        <Button id="hamburgerBtn" fx:id="showMoreNotaficationsBtn" layoutX="388.0" layoutY="485.0" minHeight="23.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" stylesheets="@style.css" />
     </children>
 </AnchorPane>

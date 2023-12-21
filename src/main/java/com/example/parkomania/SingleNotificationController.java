@@ -13,13 +13,12 @@ public class SingleNotificationController {
     private Button goBackBtn;
 
     @FXML
-    private Label registrationNumber;
+    private Button showMore;
 
     @FXML
-    private Label reservationInfo;
+    void showMore(ActionEvent event) {
 
-    @FXML
-    private Button showMoreNotaficationsBtn;
+    }
 
     @FXML
     void goBack(ActionEvent event) {

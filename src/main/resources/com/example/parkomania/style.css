@@ -51,3 +51,7 @@
     -fx-min-height: 25;
     -fx-min-width: 40;
 }
+#vehicleContainer {
+    -fx-border-width: 1;
+    -fx-border-color: #ff3131;
+}

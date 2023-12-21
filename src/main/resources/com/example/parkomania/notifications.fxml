@@ -89,7 +89,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button id="showMoreBtn" fx:id="showMore" maxWidth="54.0" mnemonicParsing="false" onAction="#showMore" prefHeight="25.0" prefWidth="54.0" stylesheets="@style.css" text="Więcej" textAlignment="CENTER" textFill="#ff3131">
+                  <Button id="showMoreBtn" maxWidth="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" stylesheets="@style.css" text="Więcej" textAlignment="CENTER" textFill="#ff3131">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -120,7 +120,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button id="showMoreBtn" fx:id="showMore" maxWidth="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" stylesheets="@style.css" text="Więcej" textAlignment="CENTER" textFill="#ff3131">
+                  <Button id="showMoreBtn" maxWidth="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" stylesheets="@style.css" text="Więcej" textAlignment="CENTER" textFill="#ff3131">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -151,7 +151,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button id="showMoreBtn" fx:id="showMore" maxWidth="54.0" mnemonicParsing="false" onAction="#showMore" prefHeight="25.0" prefWidth="54.0" stylesheets="@style.css" text="Więcej" textAlignment="CENTER" textFill="#ff3131">
+                  <Button id="showMoreBtn" maxWidth="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" stylesheets="@style.css" text="Więcej" textAlignment="CENTER" textFill="#ff3131">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

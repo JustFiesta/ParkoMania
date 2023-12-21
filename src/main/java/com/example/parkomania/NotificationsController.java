@@ -13,6 +13,13 @@ public class NotificationsController {
     private Button goBackBtn;
 
     @FXML
+    private Button showMore;
+
+    @FXML
+    void showMore(ActionEvent event) {
+
+    }
+    @FXML
     void goBack(ActionEvent event) {
         sceneManager.switchScene("mainMenu");
     }

@@ -38,14 +38,6 @@
         </Button>
       <VBox layoutX="277.0" layoutY="142.0" prefHeight="320.0" prefWidth="260.0">
          <children>
-              <Button id="whiteBtn" fx:id="goToSettings" mnemonicParsing="false" onAction="#goToSettings" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Ustawienia" textFill="#ff3131">
-                  <font>
-                      <Font name="Lato Regular" size="24.0" />
-                  </font>
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-              </Button>
               <Button id="whiteBtn" fx:id="goToUserData" mnemonicParsing="false" onAction="#goToUserData" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Moje dane" textFill="#ff3131">
                   <font>
                       <Font name="Lato Regular" size="24.0" />

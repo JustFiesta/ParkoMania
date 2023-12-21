@@ -44,12 +44,14 @@
     -fx-min-height: 50;
     -fx-min-width: 50;
 }
-#hamburgerBtn {
+#showMoreBtn {
     -fx-background-color: transparent;
     -fx-max-height: 25;
-    -fx-max-width: 40;
+    -fx-max-width: 57;
     -fx-min-height: 25;
-    -fx-min-width: 40;
+    -fx-min-width: 57;
+    -fx-border-width: 1;
+    -fx-border-color: #ff3131;
 }
 #vehicleContainer {
     -fx-border-width: 1;

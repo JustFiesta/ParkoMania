@@ -21,6 +21,7 @@ public class HelloApplication extends Application {
         sceneManager.loadScene("account", "account.fxml");
         sceneManager.loadScene("mainMenu", "mainMenu.fxml");
         sceneManager.loadScene("notifications", "notifications.fxml");
+        sceneManager.loadScene("singleNotification", "singleNotification.fxml");
         sceneManager.loadScene("bookPlace", "bookPlace.fxml");
         sceneManager.loadScene("addVehicle", "addVehicle.fxml");
         sceneManager.loadScene("changePassword", "changePassword.fxml");

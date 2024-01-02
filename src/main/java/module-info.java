@@ -10,7 +10,8 @@ module com.example.parkomania {
     requires org.kordamp.bootstrapfx.core;
     requires org.hibernate.orm.core;
     requires jakarta.persistence;
+    requires java.naming;
 
-    opens com.example.parkomania to javafx.fxml;
+    opens com.example.parkomania to javafx.fxml, org.hibernate.orm.core;
     exports com.example.parkomania;
 }

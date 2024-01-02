@@ -15,10 +15,10 @@ It is my first big GUI project.
 <hr>
 
 ## Catalog structure
--> documentation - documentation folder, containing design assumptions
--> src - source folder for this project
-    -> java - contains module info and all clasess used in this program
-    -> resources - hibernate config, fxml views (made using scene builder), images used in project
+-> documentation - documentation folder, containing design assumptions.  
+-> src - source folder for this project.  
+    -> java - contains module info and all clasess used in this program.  
+    -> resources - hibernate config, fxml views (made using scene builder), images used in project.  
 
 
 <hr>

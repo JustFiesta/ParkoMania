@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Objects;
 
 public class HelloApplication extends Application {
@@ -47,8 +48,8 @@ public class HelloApplication extends Application {
 
 
         //get path to image - platform independent
-        InputStream iconStream = getClass().getResourceAsStream("/com/example/parkomania/images/miniLogo.png");
-        Image icon = new Image(iconStream);
+        URL iconStream = getClass().getResource("/com/example/parkomania/images/miniLogo.png");
+        Image icon = new Image(String.valueOf(iconStream));
         stage.getIcons().add(icon);
         stage.setTitle("ParkoMania");
         stage.setResizable(false);
@@ -56,6 +57,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

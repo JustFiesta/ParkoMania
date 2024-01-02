@@ -32,6 +32,9 @@ Please check the documentation folder
 * hibernate.org/orm/releases
 * mvnrepository.com
 
+* always check requires in module info, and always add dependencies there
+* paths in jar file get messed up, there is no simple way to fix it. Many People get similar problem, yet it always differ in some way.
+
 <hr>
 
 ## Special Thanks

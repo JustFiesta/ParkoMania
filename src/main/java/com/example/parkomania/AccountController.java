@@ -46,7 +46,7 @@ public class AccountController {
 
     @FXML
     void logOut(ActionEvent event) {
-
+        System.out.println("Log out");
     }
     @FXML
     void goBack(ActionEvent event) {

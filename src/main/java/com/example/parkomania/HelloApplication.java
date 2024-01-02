@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class HelloApplication extends Application {
@@ -45,9 +47,9 @@ public class HelloApplication extends Application {
 
 
         //get path to image - platform independent
-//        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-//        String path = Objects.requireNonNull(classLoader.getResource("/images/logo.jpg")).getPath();
-//        stage.getIcons().add(new Image(path));
+        InputStream iconStream = getClass().getResourceAsStream("/com/example/parkomania/images/miniLogo.png");
+        Image icon = new Image(iconStream);
+        stage.getIcons().add(icon);
         stage.setTitle("ParkoMania");
         stage.setResizable(false);
         stage.show();

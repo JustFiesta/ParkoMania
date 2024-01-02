@@ -2,9 +2,11 @@ package com.example.parkomania;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "vehicle")
-public class Vehicle {
+public class Vehicle implements Serializable {
     @Id
     private int vehicle_id;
     private String registration;
@@ -28,7 +30,7 @@ public class Vehicle {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "fk_user_id")
     private User user;
 
     public int getVehicle_id() {

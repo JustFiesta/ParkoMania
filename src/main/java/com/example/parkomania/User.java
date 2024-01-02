@@ -2,13 +2,18 @@ package com.example.parkomania;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Id
     private int user_id;
     private String phone_number;
     private String mail;
+    private String password_hash;
+    @Enumerated(EnumType.STRING)
+    private UserType type;
 
     public User() {
     }
@@ -36,7 +41,7 @@ public class User {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 
@@ -71,8 +76,4 @@ public class User {
     public void setType(UserType type) {
         this.type = type;
     }
-
-    private String password_hash;
-    @Enumerated(EnumType.STRING)
-    private UserType type ;
 }

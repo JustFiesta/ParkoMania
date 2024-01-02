@@ -2,21 +2,23 @@ package com.example.parkomania;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
 @Table(name = "reservation")
-public class Reservation {
+public class Reservation implements Serializable {
     @Id
     private int reservation_id;
     private LocalTime start;
     private LocalTime stop;
     private LocalDate date;
+    @Enumerated(EnumType.STRING)
     private ReservationType type;
     private int parking_place;
     @ManyToOne
-    @JoinColumn(name = "vehicle_id")
+    @JoinColumn(name = "fk_vehicle_id")
     private Vehicle vehicle;
 
     public Reservation() {

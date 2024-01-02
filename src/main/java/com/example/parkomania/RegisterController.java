@@ -49,7 +49,7 @@ public class RegisterController {
     }
 
     @FXML
-    void submittNewUser(ActionEvent event) {
+    void submitNewUser(ActionEvent event) {
         User newUser = new User(0, "543534543", "chuj@chuj.gmail.com", "easweasbgera2q3", UserType.USER);
 
         //create session factory

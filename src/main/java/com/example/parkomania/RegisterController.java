@@ -22,7 +22,7 @@ public class RegisterController {
     private Button goBack;
 
     @FXML
-    private Button subtNewUser;
+    private Button subimtNewUser;
 
     @FXML
     void checkPassword(ActionEvent event) {

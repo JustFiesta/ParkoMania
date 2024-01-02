@@ -31,7 +31,7 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button id="backgroundBtn" fx:id="subtNewUser" layoutX="276.0" layoutY="425.0" mnemonicParsing="false" onAction="#subtNewUser" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Dołącz!" textFill="WHITE">
+        <Button id="backgroundBtn" fx:id="subimtNewUser" layoutX="276.0" layoutY="425.0" mnemonicParsing="false" onAction="#subtNewUser" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Dołącz!" textFill="WHITE">
             <font>
                 <Font name="Lato Regular" size="24.0" />
             </font>

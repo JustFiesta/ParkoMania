@@ -17,21 +17,23 @@ public class HelloApplication extends Application {
         // create instance of scene manager singleton
         sceneManager = SceneManager.getInstance(stage);
 
+        sceneManager.loadScene("loginAndRegister", "loginAndRegister.fxml");
         sceneManager.loadScene("login", "login.fxml");
-        sceneManager.loadScene("account", "account.fxml");
+        sceneManager.loadScene("register", "register.fxml");
         sceneManager.loadScene("mainMenu", "mainMenu.fxml");
+        sceneManager.loadScene("map", "map.fxml");
+        sceneManager.loadScene("account", "account.fxml");
+        sceneManager.loadScene("bookPlace", "bookPlace.fxml");
         sceneManager.loadScene("notifications", "notifications.fxml");
         sceneManager.loadScene("singleNotification", "singleNotification.fxml");
-        sceneManager.loadScene("bookPlace", "bookPlace.fxml");
+        sceneManager.loadScene("userData", "userData.fxml");
+        sceneManager.loadScene("history", "history.fxml");
+        sceneManager.loadScene("reservations", "reservations.fxml");
         sceneManager.loadScene("addVehicle", "addVehicle.fxml");
         sceneManager.loadScene("changePassword", "changePassword.fxml");
-        sceneManager.loadScene("userData", "userData.fxml");
-        sceneManager.loadScene("reservations", "reservations.fxml");
-        sceneManager.loadScene("history", "history.fxml");
-        sceneManager.loadScene("map", "map.fxml");
 
-        sceneManager.switchScene("mainMenu");
-//        sceneManager.switchScene("login");
+//        sceneManager.switchScene("mainMenu");
+        sceneManager.switchScene("loginAndRegister");
 
         //Debugging scene manager singleton
 //        System.out.println("Scene manager instance: " + sceneManager);

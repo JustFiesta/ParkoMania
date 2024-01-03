@@ -48,9 +48,9 @@ public class HelloApplication extends Application {
 
 
         //get path to image - platform independent
-//        InputStream iconStream = getClass().getResourceAsStream("/com/example/parkomania/images/miniLogo.png");
-//        Image icon = new Image(String.valueOf(iconStream));
-//        stage.getIcons().add(icon);
+        URL iconStream = getClass().getResource("/com/example/parkomania/images/miniLogo.PNG");
+        Image icon = new Image(String.valueOf(iconStream));
+        stage.getIcons().add(icon);
         stage.setTitle("ParkoMania");
         stage.setResizable(false);
         stage.show();

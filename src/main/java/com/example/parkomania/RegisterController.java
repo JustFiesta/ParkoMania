@@ -165,9 +165,10 @@ public class RegisterController {
             e.printStackTrace();
         } finally {
             session.close();
+            sessionFactory.close();
             System.out.println("Debug: Session close");
         }
-        sessionFactory.close();
+
 
         return true;
     }

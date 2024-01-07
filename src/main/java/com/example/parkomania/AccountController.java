@@ -46,7 +46,9 @@ public class AccountController {
 
     @FXML
     void logOut(ActionEvent event) {
-        System.out.println("Log out");
+        System.gc();
+        sceneManager.switchScene("loginAndRegister");
+        System.out.println("Debug: Log out");
     }
     @FXML
     void goBack(ActionEvent event) {

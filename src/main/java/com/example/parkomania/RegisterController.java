@@ -61,6 +61,8 @@ public class RegisterController {
     @FXML
     void submitNewUser(ActionEvent event) {
 
+        //if fields are in db and if they are in correct format
+
         if (!checkPhoneField(checkPhoneNumber.getText())){
             return;
         }
@@ -68,6 +70,7 @@ public class RegisterController {
             return;
         }
 
+        //user to submit via hibernate
         User newUser = new User(0, checkPhoneNumber.getText(), checkPassword.getText(), UserType.USER);
 
         //create session factory
@@ -79,23 +82,26 @@ public class RegisterController {
         //try to send transaction to db
         try {
             transaction = session.beginTransaction();
-            session.persist(newUser);
-            transaction.commit();
+            session.persist(newUser); //send user using jakarta
+            transaction.commit(); //end transaction
             System.out.println("Debug: New user added");
 
+            //if user is added successfully - switch scene
             sceneManager.switchScene("mainMenu");
-
         } catch (Exception e) {
+            //check if transaction went wrong and if so dont commit user to db
             if (transaction != null) {
                 transaction.rollback();
             }
             System.out.println("Debug: Something went wrong");
             e.printStackTrace();
         } finally {
+            //close session and session factory. then set labels to not visible
             session.close();
             sessionFactory.close();
             System.out.println("Debug: Session close");
 
+            uncorrectNumberFormat.setVisible(false);
             existingNumberDetected.setVisible(false);
             uncorrectNumberFormat.setVisible(false);
             tooShortPassInfo.setVisible(false);
@@ -167,13 +173,13 @@ public class RegisterController {
     }
     boolean checkPasswordFields(String password, String secondPasswordField){
 
-        // regular expression
+        //regular expression
         String regex = "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!]).{8,}$";
 
-        // compile expression to pattern
+        //compile expression to pattern
         Pattern pattern = Pattern.compile(regex);
 
-        // check pattern
+        //check pattern
         Matcher matcher = pattern.matcher(password);
 
         if (matcher.matches()){

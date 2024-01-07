@@ -35,7 +35,7 @@ public class RegisterController {
     private Label secondPassWrongInfo;
 
     @FXML
-    private Label uncorrectNumberFormat;
+    private Label incorrectNumberFormat;
 
     @FXML
     private Label existingNumberDetected;
@@ -54,7 +54,7 @@ public class RegisterController {
         checkPassword.clear();
         checkPasswordAgain.clear();
         existingNumberDetected.setVisible(false);
-        uncorrectNumberFormat.setVisible(false);
+        incorrectNumberFormat.setVisible(false);
         tooShortPassInfo.setVisible(false);
     }
 
@@ -101,9 +101,9 @@ public class RegisterController {
             sessionFactory.close();
             System.out.println("Debug: Session close");
 
-            uncorrectNumberFormat.setVisible(false);
+            incorrectNumberFormat.setVisible(false);
             existingNumberDetected.setVisible(false);
-            uncorrectNumberFormat.setVisible(false);
+            incorrectNumberFormat.setVisible(false);
             tooShortPassInfo.setVisible(false);
         }
     }
@@ -121,10 +121,10 @@ public class RegisterController {
         //check if it matches - if not show message and clear phone field
         if (!pattern.matcher(phoneNumber).matches()){
             checkPhoneNumber.clear();
-            uncorrectNumberFormat.setVisible(true);
+            incorrectNumberFormat.setVisible(true);
             return false;
         }else {
-            uncorrectNumberFormat.setVisible(false);
+            incorrectNumberFormat.setVisible(false);
         }
 
         //check if we have same number in database

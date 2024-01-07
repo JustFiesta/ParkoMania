@@ -9,25 +9,25 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainScene" prefHeight="572.0" prefWidth="812.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parkomania.SingleNotificationController">
+<AnchorPane id="mainScene" prefHeight="572.0" prefWidth="812.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parkomania.SingleNotificationController">
     <children>
         <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logo.png" />
+                <Image url="@../images/logo.png" />
             </image>
         </ImageView>
-        <Button id="transparentMiniBtn" fx:id="goBackBtn" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBack" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@style.css">
+        <Button id="transparentMiniBtn" fx:id="goBackBtn" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBack" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@../style.css">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@images/go-back.png" />
+                        <Image url="@../images/go-back.png" />
                     </image>
                 </ImageView>
             </graphic>
         </Button>
         <VBox layoutX="167.0" layoutY="192.0" prefHeight="197.0" prefWidth="482.0">
          <children>
-            <VBox id="notificationBar" alignment="TOP_CENTER" prefHeight="199.0" prefWidth="482.0" style="-fx-border-color: #ff3131; -fx-border-width: 2;" stylesheets="@style.css">
+            <VBox id="notificationBar" alignment="TOP_CENTER" prefHeight="199.0" prefWidth="482.0" style="-fx-border-color: #ff3131; -fx-border-width: 2;" stylesheets="@../style.css">
                <children>
                         <Label fx:id="registrationNumber" text="RZ42069F" textFill="#ff3131">
                             <font>

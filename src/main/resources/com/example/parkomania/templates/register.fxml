@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainScene" prefHeight="572.0" prefWidth="812.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parkomania.RegisterController">
+    <children>
+        <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/logo.png" />
+            </image>
+        </ImageView>
+        <Button id="backgroundBtn" layoutX="276.0" layoutY="53.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Rejestracja" textFill="WHITE">
+            <font>
+                <Font name="Lato Regular" size="24.0" />
+            </font>
+        </Button>
+        <Button id="transparentMiniBtn" fx:id="goBack" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBack" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@../style.css">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/go-back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button id="backgroundBtn" fx:id="subimtNewUser" layoutX="276.0" layoutY="425.0" mnemonicParsing="false" onAction="#submitNewUser" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Dołącz!" textFill="WHITE">
+            <font>
+                <Font name="Lato Regular" size="24.0" />
+            </font>
+        </Button>
+        <Label layoutX="230.0" layoutY="122.0" prefHeight="67.0" prefWidth="352.0" text="Aby utworzyć konto wystarczy podać numer telefonu i hasło (8 lub więcej znaków)." textAlignment="CENTER" textFill="#ff3131" wrapText="true">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+      <VBox layoutX="276.0" layoutY="207.0" prefHeight="57.0" prefWidth="260.0">
+         <children>
+            <Label text="Podaj numer telefonu:" textFill="#ff3131">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="checkPhoneNumber">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Podaj hasło:" textFill="#ff3131">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="checkPassword" />
+            <Label text="Wpisz hasło ponownie:" textFill="#ff3131">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="checkPasswordAgain" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Label fx:id="existingNumberDetected" layoutX="544.0" layoutY="230.0" prefHeight="25.0" prefWidth="202.0" text="Podany numer telefonu znajduje się w bazie!" textFill="#ff3131" visible="false" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="tooShortPassInfo" layoutX="544.0" layoutY="292.0" prefHeight="25.0" prefWidth="127.0" text="Hasło nie spełnia wymagań!" textFill="#ff3131" visible="false" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPassWrongInfo" layoutX="544.0" layoutY="352.0" prefHeight="25.0" prefWidth="127.0" text="Hasła nie są zgodne!" textFill="#ff3131" visible="false" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="uncorrectNumberFormat" layoutX="549.0" layoutY="230.0" prefHeight="25.0" prefWidth="202.0" text="Błędny numer! Spróbuj ponownie" textFill="#ff3131" visible="false" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

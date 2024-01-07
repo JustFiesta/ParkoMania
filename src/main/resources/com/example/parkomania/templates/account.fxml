@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainScene" prefHeight="572.0" prefWidth="812.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parkomania.AccountController">
+<AnchorPane id="mainScene" prefHeight="572.0" prefWidth="812.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parkomania.AccountController">
     <children>
         <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logo.png" />
+                <Image url="@../images/logo.png" />
             </image>
         </ImageView>
-        <Button id="backgroundBtn" layoutX="276.0" layoutY="53.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Moje konto" textFill="WHITE">
+        <Button id="backgroundBtn" layoutX="276.0" layoutY="53.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Moje konto" textFill="WHITE">
             <font>
                 <Font name="Lato Regular" size="24.0" />
             </font>
@@ -27,18 +27,18 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button id="transparentMiniBtn" fx:id="goBack" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBack" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@style.css">
+        <Button id="transparentMiniBtn" fx:id="goBack" alignment="CENTER" layoutX="68.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBack" style="-fx-min-width: 30; -fx-max-width: 30; -fx-min-height: 30; -fx-max-height: 30;" stylesheets="@../style.css">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@images/go-back.png" />
+                        <Image url="@../images/go-back.png" />
                     </image>
                 </ImageView>
             </graphic>
         </Button>
       <VBox layoutX="277.0" layoutY="142.0" prefHeight="320.0" prefWidth="260.0">
          <children>
-              <Button id="whiteBtn" fx:id="goToUserData" mnemonicParsing="false" onAction="#goToUserData" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Moje dane" textFill="#ff3131">
+              <Button id="whiteBtn" fx:id="goToUserData" mnemonicParsing="false" onAction="#goToUserData" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Moje dane" textFill="#ff3131">
                   <font>
                       <Font name="Lato Regular" size="24.0" />
                   </font>
@@ -46,7 +46,7 @@
                   <Insets bottom="15.0" />
                </VBox.margin>
               </Button>
-              <Button id="whiteBtn" fx:id="goToReservation" mnemonicParsing="false" onAction="#goToReservations" prefHeight="64.0" prefWidth="260.0" stylesheets="@style.css" text="Rezerwacje" textFill="#ff3131">
+              <Button id="whiteBtn" fx:id="goToReservation" mnemonicParsing="false" onAction="#goToReservations" prefHeight="64.0" prefWidth="260.0" stylesheets="@../style.css" text="Rezerwacje" textFill="#ff3131">
                   <font>
                       <Font name="Lato Regular" size="24.0" />
                   </font>
@@ -54,7 +54,7 @@
                   <Insets bottom="15.0" />
                </VBox.margin>
               </Button>
-              <Button id="whiteBtn" fx:id="goToHistory" mnemonicParsing="false" onAction="#goToHistory" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Historia" textFill="#ff3131">
+              <Button id="whiteBtn" fx:id="goToHistory" mnemonicParsing="false" onAction="#goToHistory" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Historia" textFill="#ff3131">
                   <font>
                       <Font name="Lato Regular" size="24.0" />
                   </font>
@@ -62,7 +62,7 @@
                   <Insets bottom="15.0" />
                </VBox.margin>
               </Button>
-              <Button id="backgroundBtn" fx:id="logOut" mnemonicParsing="false" onAction="#logOut" prefHeight="57.0" prefWidth="260.0" stylesheets="@style.css" text="Wyloguj się" textFill="WHITE">
+              <Button id="backgroundBtn" fx:id="logOut" mnemonicParsing="false" onAction="#logOut" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Wyloguj się" textFill="WHITE">
                   <font>
                       <Font name="Lato Regular" size="24.0" />
                   </font>

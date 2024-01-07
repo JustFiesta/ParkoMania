@@ -20,20 +20,20 @@ public class HelloApplication extends Application {
         // create instance of scene manager singleton
         sceneManager = SceneManager.getInstance(stage);
 
-        sceneManager.loadScene("loginAndRegister", "loginAndRegister.fxml");
-        sceneManager.loadScene("login", "login.fxml");
-        sceneManager.loadScene("register", "register.fxml");
-        sceneManager.loadScene("mainMenu", "mainMenu.fxml");
-        sceneManager.loadScene("map", "map.fxml");
-        sceneManager.loadScene("account", "account.fxml");
-        sceneManager.loadScene("bookPlace", "bookPlace.fxml");
-        sceneManager.loadScene("notifications", "notifications.fxml");
-        sceneManager.loadScene("singleNotification", "singleNotification.fxml");
-        sceneManager.loadScene("userData", "userData.fxml");
-        sceneManager.loadScene("history", "history.fxml");
-        sceneManager.loadScene("reservations", "reservations.fxml");
-        sceneManager.loadScene("addVehicle", "addVehicle.fxml");
-        sceneManager.loadScene("changePassword", "changePassword.fxml");
+        sceneManager.loadScene("loginAndRegister", "templates/loginAndRegister.fxml");
+        sceneManager.loadScene("login", "templates/login.fxml");
+        sceneManager.loadScene("register", "templates/register.fxml");
+        sceneManager.loadScene("mainMenu", "templates/mainMenu.fxml");
+        sceneManager.loadScene("map", "templates/map.fxml");
+        sceneManager.loadScene("account", "templates/account.fxml");
+        sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
+        sceneManager.loadScene("notifications", "templates/notifications.fxml");
+        sceneManager.loadScene("singleNotification", "templates/singleNotification.fxml");
+        sceneManager.loadScene("userData", "templates/userData.fxml");
+        sceneManager.loadScene("history", "templates/history.fxml");
+        sceneManager.loadScene("reservations", "templates/reservations.fxml");
+        sceneManager.loadScene("addVehicle", "templates/addVehicle.fxml");
+        sceneManager.loadScene("changePassword", "templates/changePassword.fxml");
 
 //        sceneManager.switchScene("mainMenu");
         sceneManager.switchScene("loginAndRegister");

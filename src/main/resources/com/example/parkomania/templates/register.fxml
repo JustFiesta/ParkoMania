@@ -89,7 +89,7 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="uncorrectNumberFormat" layoutX="549.0" layoutY="230.0" prefHeight="25.0" prefWidth="202.0" text="Błędny numer! Spróbuj ponownie" textFill="#ff3131" visible="false" wrapText="true">
+      <Label fx:id="incorrectNumberFormat" layoutX="549.0" layoutY="230.0" prefHeight="25.0" prefWidth="202.0" text="Błędny numer! Spróbuj ponownie" textFill="#ff3131" visible="false" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>

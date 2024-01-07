@@ -3,6 +3,7 @@ package com.example.parkomania;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "vehicle")
@@ -10,6 +11,14 @@ public class Vehicle implements Serializable {
     @Id
     private int vehicle_id;
     private String registration;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_user_id")
+    private User user;
+
+    @OneToMany
+    @JoinColumn(name = "fk_vehicle_id")
+    private List<Reservation> reservations;
 
     public Vehicle() {
     }
@@ -28,10 +37,6 @@ public class Vehicle implements Serializable {
                 ", user=" + user +
                 '}';
     }
-
-    @ManyToOne
-    @JoinColumn(name = "fk_user_id")
-    private User user;
 
     public int getVehicle_id() {
         return vehicle_id;

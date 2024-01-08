@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+import static com.example.parkomania.HelloApplication.loggedUser;
 import static com.example.parkomania.HelloApplication.sceneManager;
 
 public class AccountController {
@@ -18,9 +19,6 @@ public class AccountController {
 
     @FXML
     private Button goToReservation;
-
-    @FXML
-    private Button goToSettings;
 
     @FXML
     private Button logOut;
@@ -40,15 +38,11 @@ public class AccountController {
     }
 
     @FXML
-    void goToSettings(ActionEvent event) {
-        sceneManager.switchScene("settings");
-    }
-
-    @FXML
     void logOut(ActionEvent event) {
         System.gc();
         sceneManager.switchScene("loginAndRegister");
         System.out.println("Debug: Log out");
+        loggedUser = null;
     }
     @FXML
     void goBack(ActionEvent event) {

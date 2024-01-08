@@ -3,6 +3,7 @@ package com.example.parkomania;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
@@ -14,16 +15,13 @@ public class BookPlaceController {
     private Button addTime;
 
     @FXML
+    private ChoiceBox<Vehicle> chooseVehicle;
+
+    @FXML
     private Label choosingTimer;
 
     @FXML
     private Button goBack;
-
-    @FXML
-    private Button showCalendar;
-
-    @FXML
-    private Button showInfo;
 
     @FXML
     private ImageView startAndStopImg;
@@ -35,12 +33,13 @@ public class BookPlaceController {
     private Button substractTime;
 
     @FXML
-    void substractTime(ActionEvent event) {
-        System.out.println("-");
-    }
-    @FXML
     void addTime(ActionEvent event) {
-        System.out.println("+");
+
+    }
+
+    @FXML
+    void substractTime(ActionEvent event) {
+
     }
 
     @FXML
@@ -49,17 +48,7 @@ public class BookPlaceController {
     }
 
     @FXML
-    void showCalendar(ActionEvent event) {
-
-    }
-
-    @FXML
-    void showInfo(ActionEvent event) {
-
-    }
-
-    @FXML
     void goBack(ActionEvent event) {
-        sceneManager.switchScene("map");
+        sceneManager.switchScene("mainMenu");
     }
 }

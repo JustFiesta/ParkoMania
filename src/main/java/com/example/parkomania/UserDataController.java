@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.HBox;
 
 import static com.example.parkomania.HelloApplication.sceneManager;
@@ -23,7 +24,7 @@ public class UserDataController {
     private Button goToChangePassword;
 
     @FXML
-    private Label nrTel;
+    private TableView<Vehicle> vehicleTable;
 
     @FXML
     private HBox vehicleContainer;
@@ -31,6 +32,8 @@ public class UserDataController {
     @FXML
     private Label vehicleRegistration;
 
+    @FXML
+    private Button goToDelVehicle;
 
     @FXML
     void goToAddVehicle(ActionEvent event) {
@@ -40,6 +43,10 @@ public class UserDataController {
     @FXML
     void goToChangePassword(ActionEvent event) {
         sceneManager.switchScene("changePassword");
+    }
+    @FXML
+    void goToDelVehicle(ActionEvent event) {
+        sceneManager.switchScene("deleteVehicle");
     }
     @FXML
     void goBack(ActionEvent event) {

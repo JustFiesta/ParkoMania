@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,6 +14,7 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import static com.example.parkomania.HelloApplication.loggedUser;
 import static com.example.parkomania.HelloApplication.sceneManager;
 
 public class LoginController {
@@ -23,7 +25,7 @@ public class LoginController {
     private Button logIn;
 
     @FXML
-    private TextField passwordField;
+    private PasswordField passwordField;
 
     @FXML
     private TextField phoneField;
@@ -41,14 +43,20 @@ public class LoginController {
     void goBack(ActionEvent event) {
         sceneManager.switchScene("loginAndRegister");
     }
+    private int userId; // for createLoggedUser - i know its not how it should be but time is ticking
 
     @FXML
     void logIn(ActionEvent event) {
         System.out.println("Debug: Credentails submitted");
-        if (checkCredentials(phoneField.getText(), passwordField.getText())) {
-        sceneManager.switchScene("mainMenu");
-//            create new user singleton,
-//            go to main menu
+
+        boolean credentialsCheck = checkCredentials(phoneField.getText(), passwordField.getText());
+
+        if (credentialsCheck) {
+            System.out.println("Debug: UserId is: " + userId);
+            createLoggedUser(credentialsCheck, userId);
+            passwordField.clear();
+            sceneManager.switchScene("mainMenu");
+            System.out.println("Debug: currently logged: " + loggedUser.getPhone_number() + " " + loggedUser.getUser_id());
         }else {
             System.out.println("Debug: Phone or password is wrong");
         }
@@ -83,6 +91,7 @@ public class LoginController {
         //check if we have same number in database - HQL needed. SQL throws exceptions
         String checkPhoneNumInDBQuery = "SELECT phone_number FROM User WHERE phone_number = :phoneNumber";
         String checkPasswordHashInDBQuery = "SELECT password_hash FROM User WHERE phone_number = :phoneNumber";
+        String checkIdInDBQuery = "SELECT user_id FROM User WHERE phone_number = :phoneNumber";
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
@@ -98,19 +107,23 @@ public class LoginController {
             List<String> passwordHashes = session.createQuery(checkPasswordHashInDBQuery)
                     .setParameter("phoneNumber", phoneNumber)  // Ustawienie tego samego parametru 'phoneNumber'
                     .getResultList();
+            List<Integer> ids = session.createQuery(checkIdInDBQuery)
+                    .setParameter("phoneNumber", phoneNumber)  // Ustawienie tego samego parametru 'phoneNumber'
+                    .getResultList();
 
             if (!phoneNumbers.isEmpty()) {
-//                /// found number, so check if password matches
-                String storedPasswordHash = (String) passwordHashes.get(0); // assuming the second column is the password hash
+                //found number, so check if password matches
+                String storedPasswordHash = (String) passwordHashes.get(0);
+                userId = ids.get(0);
 
                 if (checkPassword(password, storedPasswordHash)) {
-                    // password is correct
+                    //password is correct
                     session.close();
                     sessionFactory.close();
 
                     return true;
                 } else {
-                    // incorrect password
+                    //incorrect password
                     incorrectPassword.setVisible(true);
                 }
             }else {
@@ -135,6 +148,7 @@ public class LoginController {
 
     //hash given password and compare it to password in db
     boolean checkPassword(String inputPassword, String storedPasswordHash) {
+        //TODO hashing
 //        try {
 //            MessageDigest digest = MessageDigest.getInstance("SHA-256");
 //            byte[] hashedPassword = digest.digest(inputPassword.getBytes(StandardCharsets.UTF_8));
@@ -152,5 +166,32 @@ public class LoginController {
             return true;
         }
         return false;
+    }
+    User createLoggedUser(boolean areCredentialsCorrect, int userId){
+        if (areCredentialsCorrect){
+
+            SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+            Session session = sessionFactory.openSession();
+
+            Transaction transaction = null;
+
+            try {
+                loggedUser = (User) session.get(User.class, userId);
+            } catch (Exception e) {
+                if (transaction != null) {
+                    transaction.rollback();
+                }
+                System.out.println("Debug: Something went wrong - User not created");
+                e.printStackTrace();
+            } finally {
+                session.close();
+                sessionFactory.close();
+                System.out.println("Debug: Session close");
+            }
+
+            return loggedUser;
+        }
+        System.out.println("Debug: User is not logged!");
+        return null;
     }
 }

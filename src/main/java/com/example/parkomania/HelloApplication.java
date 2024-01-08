@@ -15,6 +15,7 @@ import java.util.Objects;
 
 public class HelloApplication extends Application {
     public static SceneManager sceneManager;
+    public static User loggedUser;
     @Override
     public void start(Stage stage) throws IOException {
         // create instance of scene manager singleton
@@ -33,6 +34,7 @@ public class HelloApplication extends Application {
         sceneManager.loadScene("history", "templates/history.fxml");
         sceneManager.loadScene("reservations", "templates/reservations.fxml");
         sceneManager.loadScene("addVehicle", "templates/addVehicle.fxml");
+        sceneManager.loadScene("deleteVehicle", "templates/deleteVehicle.fxml");
         sceneManager.loadScene("changePassword", "templates/changePassword.fxml");
 
 //        sceneManager.switchScene("mainMenu");

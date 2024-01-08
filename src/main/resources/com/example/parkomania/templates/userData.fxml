@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -62,21 +64,6 @@
                </VBox.margin>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="260.0">
-               <children>
-                  <Label text="Adres email:" textFill="#ff3131">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="11.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label fx:id="email" prefHeight="25.0" prefWidth="139.0" text="test@email.edu.pl" textFill="#ff3131">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-               </children>
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -93,52 +80,19 @@
                   <Font name="Lato Regular" size="24.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="15.0" />
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <HBox id="vehicleContainer" fx:id="vehicleContainer" alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="260.0" style="-fx-border-width: 1; -fx-border-color: ff3131;" stylesheets="@../style.css">
-               <children>
-                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/20231219_161926_0010.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="5.0" right="45.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label fx:id="vehicleRegistration" prefHeight="30.0" prefWidth="108.0" text="RZ91169E" textFill="#ff3131">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="11.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
+            <TableView fx:id="vehicleTable" prefHeight="161.0" prefWidth="260.0">
+              <columns>
+                <TableColumn prefWidth="44.0" text="id" />
+                <TableColumn prefWidth="130.0" text="rejestracja" />
+                  <TableColumn prefWidth="85.0" text="użytkownik" />
+              </columns>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="10.0" />
                </VBox.margin>
-            </HBox>
-            <HBox id="vehicleContainer" alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="260.0" stylesheets="@../style.css">
-               <children>
-                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/20231219_161926_0010.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="5.0" right="45.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="30.0" prefWidth="108.0" text="R1ROMEO" textFill="#ff3131">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="11.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
+            </TableView>
          </children>
          <opaqueInsets>
             <Insets />
@@ -150,6 +104,11 @@
          </font>
       </Button>
       <Button id="whiteBtn" fx:id="goToAddVehicle" layoutX="467.0" layoutY="374.0" mnemonicParsing="false" onAction="#goToAddVehicle" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Dodaj pojazd" textFill="#ff3131">
+         <font>
+            <Font name="Lato Regular" size="24.0" />
+         </font>
+      </Button>
+      <Button id="whiteBtn" fx:id="goToDelVehicle" layoutX="467.0" layoutY="440.0" mnemonicParsing="false" onAction="#goToDelVehicle" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Usuń pojazd" textFill="#ff3131">
          <font>
             <Font name="Lato Regular" size="24.0" />
          </font>

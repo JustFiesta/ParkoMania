@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+import java.io.IOException;
+
 import static com.example.parkomania.HelloApplication.sceneManager;
 
 public class MainMenuController {
@@ -22,9 +24,10 @@ public class MainMenuController {
     }
 
     @FXML
-    void goToMap(ActionEvent event) {
+    void goToMap(ActionEvent event) throws IOException {
 //        System.out.println("Switching to Map");
         sceneManager.switchScene("map");
+        sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
     }
 
     @FXML

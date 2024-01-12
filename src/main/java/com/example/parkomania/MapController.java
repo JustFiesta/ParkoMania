@@ -18,9 +18,14 @@ import static com.example.parkomania.HelloApplication.sceneManager;
 public class MapController {
     //import fxid from fxml
     @FXML
+    private Label infoLabel;
+
+    @FXML
     private Button reservePlace;
+
     @FXML
     private VBox shiftVBox;
+
     @FXML
     private ImageView place1;
 
@@ -86,6 +91,14 @@ public class MapController {
         reservePlace.setVisible(true);
         reservePlace.setDisable(false);
     }
+    private void hideReserveBtn() {
+        shiftVBox.getChildren().clear();
+        shiftVBox.getChildren().add(infoLabel);
+//        setReserveImg("place" + placeNumber);
+
+        reservePlace.setVisible(false);
+        reservePlace.setDisable(true);
+    }
 
     //change img with white P to red P - indicating clicked button
     private void setReserveImg(ImageView correspondingPlace) throws IOException {
@@ -97,7 +110,7 @@ public class MapController {
 //                .forEach(path -> {
 //                    System.out.println(path);
 //                });
-        correspondingPlace.setImage(new Image("file:./src/main/resources/com/example/parkomania/images/choosed_place.png"));
+        correspondingPlace.setImage(new Image("file:/com/example/parkomania/images/choosed_place.png"));
     }
 
     // sends request, checks if place is free and locks it for some time
@@ -110,6 +123,7 @@ public class MapController {
     @FXML
     void goBack(ActionEvent event) {
         sceneManager.switchScene("mainMenu");
+        hideReserveBtn();
     }
 }
 

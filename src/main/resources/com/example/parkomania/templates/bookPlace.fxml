@@ -29,16 +29,37 @@
         </Button>
       <AnchorPane id="timerBox" layoutX="307.0" layoutY="228.0" prefHeight="66.0" prefWidth="197.0" style="-fx-border-color: #FF3131; -fx-border-width: 2;" stylesheets="@../style.css">
          <children>
-            <Label fx:id="choosingTimer" layoutX="28.0" layoutY="8.0" prefHeight="51.0" prefWidth="142.0" text="00:00:00" textFill="#ff3131">
+            <Label fx:id="choosingTimer" alignment="CENTER" layoutX="15.0" layoutY="8.0" prefHeight="51.0" prefWidth="166.0" text="00:00" textAlignment="CENTER" textFill="#ff3131">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button id="startAndStopBtn" fx:id="startCounting" layoutX="357.0" layoutY="242.0" mnemonicParsing="false" onAction="#startCounting" stylesheets="@../style.css" />
-      <Button id="plusAndMinusBtn" fx:id="addTime" layoutX="283.0" layoutY="261.0" mnemonicParsing="false" onAction="#addTime" style="-fx-max-height: 50; -fx-max-width: 50; -fx-min-height: 50; -fx-min-width: 50;" stylesheets="@../style.css" />
-      <Button id="plusAndMinusBtn" fx:id="substractTime" layoutX="468.0" layoutY="249.0" mnemonicParsing="false" onAction="#substractTime" stylesheets="@../style.css" />
+      <Button id="startAndStopBtn" fx:id="startAndStopCounting" layoutX="356.0" layoutY="324.0" mnemonicParsing="false" onAction="#startAndStopCounting" stylesheets="@../style.css">
+         <graphic>
+            <ImageView fx:id="startAndStopImg" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/start.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button id="plusAndMinusBtn" fx:id="addTime" layoutX="284.0" layoutY="350.0" mnemonicParsing="false" onAction="#addTime" style="-fx-max-height: 50; -fx-max-width: 50; -fx-min-height: 50; -fx-min-width: 50;" stylesheets="@../style.css">
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/20231219_161926_0013.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button id="plusAndMinusBtn" fx:id="subtractTime" layoutX="468.0" layoutY="337.0" mnemonicParsing="false" onAction="#subtractTime" stylesheets="@../style.css">
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/20231219_161926_0012.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button id="transparentBtn" fx:id="goBack" layoutX="68.0" layoutY="489.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: transparent;" stylesheets="@../style.css" textAlignment="CENTER">
          <graphic>
               <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
@@ -53,23 +74,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button id="transparentCalendarBtn" fx:id="showCalendar" layoutX="543.0" layoutY="170.0" mnemonicParsing="false" onAction="#showCalendar" stylesheets="@../style.css" />
       <ChoiceBox fx:id="chooseVehicle" layoutX="332.0" layoutY="183.0" prefWidth="150.0" />
-      <ImageView fx:id="startAndStopImg" fitHeight="100.0" fitWidth="100.0" layoutX="356.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/start.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="473.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/20231219_161926_0012.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="276.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/20231219_161926_0013.png" />
-         </image>
-      </ImageView>
       <Label id="infoLabel" layoutX="342.0" layoutY="131.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-alignment: center;" stylesheets="@../style.css" text="Wybierz pojazd z listy" textFill="#ff3131" wrapText="true">
          <font>
             <Font size="13.0" />

@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.example.parkomania.HelloApplication.loggedUser;
 import static com.example.parkomania.HelloApplication.sceneManager;
 
 public class RegisterController {
@@ -85,6 +86,8 @@ public class RegisterController {
             session.persist(newUser); //send user using jakarta
             transaction.commit(); //end transaction
             System.out.println("Debug: New user added");
+
+            loggedUser = newUser;
 
             //if user is added successfully - switch scene
             sceneManager.switchScene("mainMenu");

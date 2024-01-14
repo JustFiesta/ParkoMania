@@ -88,6 +88,7 @@ public class RegisterController {
 
             //if user is added successfully - switch scene
             sceneManager.switchScene("mainMenu");
+            sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
         } catch (Exception e) {
             //check if transaction went wrong and if so dont commit user to db
             if (transaction != null) {

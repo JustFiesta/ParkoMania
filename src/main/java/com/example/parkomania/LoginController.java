@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -56,6 +57,11 @@ public class LoginController {
             createLoggedUser(credentialsCheck, userId);
             passwordField.clear();
             sceneManager.switchScene("mainMenu");
+            try {
+                sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println("Debug: currently logged: " + loggedUser.getPhone_number() + " " + loggedUser.getUser_id());
         }else {
             System.out.println("Debug: Phone or password is wrong");
@@ -146,7 +152,7 @@ public class LoginController {
         return false;
     }
 
-    //hash given password and compare it to password in db
+    //hash password and compare it to password hash in db
     boolean checkPassword(String inputPassword, String storedPasswordHash) {
         //TODO hashing
 //        try {

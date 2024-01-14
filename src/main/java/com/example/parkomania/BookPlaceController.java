@@ -56,13 +56,9 @@ public class BookPlaceController implements Initializable {
     private LocalTime currentTime = LocalTime.of(0, 0);
     private boolean countingDown;
     private Timeline timeline;
-    private LocalTime startTime;
     private LocalTime stopTime;
-    private int startHour;
-    private int startMinute;
-    private int endHour;
-    private int endMinute;
-    private Vehicle choosedVehicle;
+    private LocalTime startTime;
+    public static Vehicle choosedVehicle;
     private List<Vehicle> carList;
     private Reservation newReservation;
 
@@ -148,14 +144,26 @@ public class BookPlaceController implements Initializable {
             //count up
             System.out.println("Debug: counting up");
             countingDown = false;
-            startTime = LocalTime.now();
+            stopTime = LocalTime.now();
+            startTime = null;
+
+            //TODO
+            //setting stop time correctly
 
             sendReservationToDB(ReservationType.STARTSTOP);
         } else {
             //count down
+
+            disableStartButton();
+
             System.out.println("Debug: counting down");
             countingDown = true;
-            startTime = LocalTime.now().plusHours(baseTime.getHour()).plusMinutes(baseTime.getMinute());
+            stopTime = LocalTime.now().plusHours(baseTime.getHour()).plusMinutes(baseTime.getMinute());
+            startTime = LocalTime.now();
+
+            System.out.println("Debug: stopTime: " + stopTime);
+            System.out.println("Debug: startTime: " + startTime);
+
 
             sendReservationToDB(ReservationType.PER_MIN);
         }
@@ -170,11 +178,9 @@ public class BookPlaceController implements Initializable {
         startAndStopImg.setImage(new Image("file:../images/20231219_161926_0011.png"));
         timeline.stop();
 
-        stopTime = LocalTime.now();
-        endHour = stopTime.getHour();
-        endMinute = stopTime.getMinute();
+        startTime = LocalTime.now();
 
-        LocalTime elapsed = LocalTime.ofSecondOfDay(startTime.until(stopTime, ChronoUnit.SECONDS));
+        LocalTime elapsed = LocalTime.ofSecondOfDay(stopTime.until(startTime, ChronoUnit.SECONDS));
 
         currentTime = currentTime.plusHours(elapsed.getHour())
                 .plusMinutes(elapsed.getMinute())
@@ -191,7 +197,17 @@ public class BookPlaceController implements Initializable {
     }
     private void sendReservationToDB(ReservationType type){
 
-        newReservation = new Reservation(0, startTime, stopTime, LocalDate.now(), type,choosedVehicle);
+        String timeSummary = null;
+
+        if (type.equals(ReservationType.PER_MIN)){
+            long hours = ChronoUnit.HOURS.between(startTime, stopTime);
+            long minutes = ChronoUnit.MINUTES.between(startTime, stopTime) % 60;
+
+            timeSummary = hours + ":" + minutes;
+        }
+        System.out.println("Debug: sending time summary: " + timeSummary);
+
+        newReservation = new Reservation(0, startTime, stopTime, LocalDate.now(), timeSummary, choosedVehicle, type);
 
         //create session factory
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -204,7 +220,7 @@ public class BookPlaceController implements Initializable {
             transaction = session.beginTransaction();
             session.persist(newReservation); //send reservation using jakarta
             transaction.commit(); //end transaction
-            System.out.println("Debug: New user added");
+            System.out.println("Debug: New reservation added");
 
         } catch (Exception e) {
             //check if transaction went wrong and if so dont commit
@@ -228,7 +244,7 @@ public class BookPlaceController implements Initializable {
 
                     if (countingDown) {
                         // counting down
-                        long remainingMillis = now.until(startTime, ChronoUnit.MILLIS);
+                        long remainingMillis = now.until(stopTime, ChronoUnit.MILLIS);
                         long hours = TimeUnit.MILLISECONDS.toHours(remainingMillis);
                         long minutes = TimeUnit.MILLISECONDS.toMinutes(remainingMillis) % 60;
                         long seconds = TimeUnit.MILLISECONDS.toSeconds(remainingMillis) % 60;
@@ -240,7 +256,7 @@ public class BookPlaceController implements Initializable {
                         }
                     } else {
                         // count up
-                        long elapsedMillis = startTime.until(now, ChronoUnit.MILLIS);
+                        long elapsedMillis = stopTime.until(now, ChronoUnit.MILLIS);
                         long hours = TimeUnit.MILLISECONDS.toHours(elapsedMillis);
                         long minutes = TimeUnit.MILLISECONDS.toMinutes(elapsedMillis) % 60;
                         long seconds = TimeUnit.MILLISECONDS.toSeconds(elapsedMillis) % 60;
@@ -276,7 +292,7 @@ public class BookPlaceController implements Initializable {
 
     @FXML
     void goBack(ActionEvent event) {
-        sceneManager.switchScene("map");
+        sceneManager.switchScene("mainMenu");
     }
 
     //loads contents on scene load and listens for change in choiceBox

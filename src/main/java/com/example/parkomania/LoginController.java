@@ -59,6 +59,9 @@ public class LoginController {
             sceneManager.switchScene("mainMenu");
             try {
                 sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
+                sceneManager.loadScene("userData", "templates/userData.fxml");
+                sceneManager.loadScene("history", "templates/history.fxml");
+                sceneManager.loadScene("reservations", "templates/reservations.fxml");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

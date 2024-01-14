@@ -21,7 +21,8 @@ Users can:
 * how to develop GUI project 
 * how to split tasks to atomic level - like in Lean Development meaning. This way is better for single person to not loose focus and motivation. Also speeds up development process. 
 * how to explain code to colleagues - writing classes, methods and variables in way that anyone can easly get up to speed on what is going on 
-* debugging code 
+* debugging code
+* building jar 
 * working with documentation - well oracles' is a mess, hibernates' too. But source code form classes make it bearable to understand 
 * asking for help if needed - if stuck don't worry, anyone can have better and worse days. Sometimes brain is not working as it should 
 

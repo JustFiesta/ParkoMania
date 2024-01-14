@@ -15,23 +15,23 @@ public class Reservation implements Serializable {
     private LocalTime start;
     private LocalTime stop;
     private LocalDate date;
-    @Enumerated(EnumType.STRING)
-    private ReservationType type;
-    private int parking_place;
+    //    private int parking_place;
     @ManyToOne
     @JoinColumn(name = "fk_vehicle_id")
     private Vehicle vehicle;
+    @Enumerated(EnumType.STRING)
+    private ReservationType type;
 
     public Reservation() {
     }
 
-    public Reservation(int reservation_id, LocalTime start, LocalTime stop, LocalDate date, ReservationType type, int parking_place, Vehicle vehicle) {
+    public Reservation(int reservation_id, LocalTime start, LocalTime stop, LocalDate date, ReservationType type, Vehicle vehicle) {
         this.reservation_id = reservation_id;
         this.start = start;
         this.stop = stop;
         this.date = date;
         this.type = type;
-        this.parking_place = parking_place;
+//        this.parking_place = parking_place;
         this.vehicle = vehicle;
     }
 
@@ -43,7 +43,7 @@ public class Reservation implements Serializable {
                 ", stop=" + stop +
                 ", date=" + date +
                 ", type=" + type +
-                ", parking_place=" + parking_place +
+//                ", parking_place=" + parking_place +
                 ", vehicle=" + vehicle +
                 '}';
     }
@@ -88,13 +88,13 @@ public class Reservation implements Serializable {
         this.type = type;
     }
 
-    public int getParking_place() {
-        return parking_place;
-    }
+//    public int getParking_place() {
+//        return parking_place;
+//    }
 
-    public void setParking_place(int parking_place) {
-        this.parking_place = parking_place;
-    }
+//    public void setParking_place(int parking_place) {
+//        this.parking_place = parking_place;
+//    }
 
     public Vehicle getVehicle() {
         return vehicle;

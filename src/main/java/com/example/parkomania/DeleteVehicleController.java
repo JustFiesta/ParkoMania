@@ -67,6 +67,9 @@ public class DeleteVehicleController {
 
                 transaction.commit();
                 checkVehicle.clear();
+
+                sceneManager.loadScene("userData", "templates/userData.fxml");
+                sceneManager.switchScene("userData");
             } catch (Exception e) {
                 if (transaction != null) {
                     transaction.rollback();

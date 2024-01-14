@@ -25,14 +25,9 @@ public class HelloApplication extends Application {
         sceneManager.loadScene("login", "templates/login.fxml");
         sceneManager.loadScene("register", "templates/register.fxml");
         sceneManager.loadScene("mainMenu", "templates/mainMenu.fxml");
-//        sceneManager.loadScene("map", "templates/map.fxml"); // kinda useless anyway
         sceneManager.loadScene("account", "templates/account.fxml");
-//        sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
         sceneManager.loadScene("notifications", "templates/notifications.fxml");
         sceneManager.loadScene("singleNotification", "templates/singleNotification.fxml");
-        sceneManager.loadScene("userData", "templates/userData.fxml");
-        sceneManager.loadScene("history", "templates/history.fxml");
-        sceneManager.loadScene("reservations", "templates/reservations.fxml");
         sceneManager.loadScene("addVehicle", "templates/addVehicle.fxml");
         sceneManager.loadScene("deleteVehicle", "templates/deleteVehicle.fxml");
         sceneManager.loadScene("changePassword", "templates/changePassword.fxml");

@@ -15,6 +15,8 @@ public class NotificationsController {
     @FXML
     private Button showMore;
 
+    //TODO
+    //fetch reservations and give corresponding notifications
     @FXML
     void showMore(ActionEvent event) {
 

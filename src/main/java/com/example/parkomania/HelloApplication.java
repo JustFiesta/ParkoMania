@@ -32,7 +32,6 @@ public class HelloApplication extends Application {
         sceneManager.loadScene("deleteVehicle", "templates/deleteVehicle.fxml");
         sceneManager.loadScene("changePassword", "templates/changePassword.fxml");
 
-//        sceneManager.switchScene("mainMenu");
         sceneManager.switchScene("loginAndRegister");
 
         //Debugging scene manager singleton

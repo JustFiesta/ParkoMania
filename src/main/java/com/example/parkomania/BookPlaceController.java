@@ -239,7 +239,7 @@ public class BookPlaceController implements Initializable {
 
     @FXML
     void goBack(ActionEvent event) {
-        sceneManager.switchScene("mainMenu");
+        sceneManager.switchScene("map");
     }
 
     //loads contents on scene load and listens for change in choiceBox

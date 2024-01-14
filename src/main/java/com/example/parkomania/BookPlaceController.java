@@ -18,6 +18,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -56,13 +57,14 @@ public class BookPlaceController implements Initializable {
     private boolean countingDown;
     private Timeline timeline;
     private LocalTime startTime;
-    private LocalTime endTime;
+    private LocalTime stopTime;
     private int startHour;
     private int startMinute;
     private int endHour;
     private int endMinute;
     private Vehicle choosedVehicle;
     private List<Vehicle> carList;
+    private Reservation newReservation;
 
 
     private void fetchUserVehicles(){
@@ -141,17 +143,21 @@ public class BookPlaceController implements Initializable {
         System.out.println("Debug: Start odliczania, czas=" + LocalTime.now());
         startAndStopImg.setImage(new Image("file:../images/20231219_161926_0011.png"));
 
+
         if (baseTime.equals(LocalTime.of(0, 0))) {
             //count up
             System.out.println("Debug: counting up");
             countingDown = false;
             startTime = LocalTime.now();
 
+            sendReservationToDB(ReservationType.STARTSTOP);
         } else {
             //count down
             System.out.println("Debug: counting down");
             countingDown = true;
-            startTime = LocalTime.now().plusHours(baseTime.getHour()).plusMinutes(baseTime.getMinute());;
+            startTime = LocalTime.now().plusHours(baseTime.getHour()).plusMinutes(baseTime.getMinute());
+
+            sendReservationToDB(ReservationType.PER_MIN);
         }
 
 //        updateLabel();
@@ -164,11 +170,11 @@ public class BookPlaceController implements Initializable {
         startAndStopImg.setImage(new Image("file:../images/20231219_161926_0011.png"));
         timeline.stop();
 
-        endTime = LocalTime.now();
-        endHour = endTime.getHour();
-        endMinute = endTime.getMinute();
+        stopTime = LocalTime.now();
+        endHour = stopTime.getHour();
+        endMinute = stopTime.getMinute();
 
-        LocalTime elapsed = LocalTime.ofSecondOfDay(startTime.until(endTime, ChronoUnit.SECONDS));
+        LocalTime elapsed = LocalTime.ofSecondOfDay(startTime.until(stopTime, ChronoUnit.SECONDS));
 
         currentTime = currentTime.plusHours(elapsed.getHour())
                 .plusMinutes(elapsed.getMinute())
@@ -182,6 +188,37 @@ public class BookPlaceController implements Initializable {
         enableAddAndSubtractButtons();
 
         baseTime = LocalTime.of(0, 0);
+    }
+    private void sendReservationToDB(ReservationType type){
+
+        newReservation = new Reservation(0, startTime, stopTime, LocalDate.now(), type,choosedVehicle);
+
+        //create session factory
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        Transaction transaction = null;
+
+        //try to send transaction to db
+        try {
+            transaction = session.beginTransaction();
+            session.persist(newReservation); //send reservation using jakarta
+            transaction.commit(); //end transaction
+            System.out.println("Debug: New user added");
+
+        } catch (Exception e) {
+            //check if transaction went wrong and if so dont commit
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            System.out.println("Debug: Something went wrong");
+            e.printStackTrace();
+        } finally {
+            //close session and session factory. then set labels to not visible
+            session.close();
+            sessionFactory.close();
+            System.out.println("Debug: Session close");
+        }
     }
 
     private void initializeTimeline() {

@@ -34,10 +34,9 @@
          <children>
             <TableView fx:id="currentReservations" prefHeight="284.0" prefWidth="566.0">
               <columns>
-                <TableColumn prefWidth="145.0" text="Rejestracja" />
-                <TableColumn minWidth="5.0" prefWidth="122.0" text="Od" />
-                  <TableColumn minWidth="5.0" prefWidth="122.0" text="Do" />
-                  <TableColumn minWidth="5.0" prefWidth="176.0" text="Typ" />
+                <TableColumn fx:id="registerCol" prefWidth="194.0" text="Rejestracja" />
+                <TableColumn fx:id="startTimeCol" minWidth="5.0" prefWidth="184.0" text="Od" />
+                  <TableColumn fx:id="reservationTypeCol" minWidth="5.0" prefWidth="187.0" text="Typ" />
               </columns>
             </TableView>
          </children>

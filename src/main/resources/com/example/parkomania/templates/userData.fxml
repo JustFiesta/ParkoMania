@@ -85,9 +85,7 @@
             </Button>
             <TableView fx:id="vehicleTable" prefHeight="161.0" prefWidth="260.0">
               <columns>
-                <TableColumn prefWidth="44.0" text="id" />
-                <TableColumn prefWidth="130.0" text="rejestracja" />
-                  <TableColumn prefWidth="85.0" text="użytkownik" />
+                <TableColumn fx:id="registrations" prefWidth="259.0" text="rejestracja" />
               </columns>
                <VBox.margin>
                   <Insets bottom="10.0" />

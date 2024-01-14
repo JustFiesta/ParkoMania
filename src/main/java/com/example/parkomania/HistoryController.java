@@ -59,8 +59,6 @@ public class HistoryController implements Initializable {
 
         //try to send transaction to db
         try {
-            //Debug
-            loggedUser.setUser_id(27);
             System.out.println("Debug: Fetching all reservations");
 
             transaction = session.beginTransaction();

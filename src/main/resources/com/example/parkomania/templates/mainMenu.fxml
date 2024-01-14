@@ -16,7 +16,7 @@
       </ImageView>
       <VBox layoutX="276.0" layoutY="166.0" prefHeight="192.0" prefWidth="260.0" spacing="25.0">
          <children>
-             <Button id="whiteBtn" fx:id="goToMap" mnemonicParsing="false" onAction="#goToMap" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Mapa" textFill="#ff3131">
+             <Button id="whiteBtn" fx:id="goToMap" mnemonicParsing="false" onAction="#goToMap" prefHeight="57.0" prefWidth="260.0" stylesheets="@../style.css" text="Rezerwuj miejsce" textFill="#ff3131">
                  <font>
                      <Font name="Lato Regular" size="24.0" />
                  </font>

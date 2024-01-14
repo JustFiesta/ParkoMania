@@ -29,7 +29,7 @@ public class MainMenuController {
     @FXML
     void goToMap(ActionEvent event) throws IOException {
 //        System.out.println("Switching to Map");
-        sceneManager.switchScene("map");
+        sceneManager.switchScene("bookPlace");
     }
 
     @FXML
@@ -37,13 +37,4 @@ public class MainMenuController {
 //        System.out.println("Switching to Notifications");
         sceneManager.switchScene("notifications");
     }
-
-//    @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        try {
-//            sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 }

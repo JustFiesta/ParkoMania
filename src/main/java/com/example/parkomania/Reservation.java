@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Set;
 
 @Entity
 @Table(name = "reservation")
@@ -15,7 +14,7 @@ public class Reservation implements Serializable {
     private LocalTime start;
     private LocalTime stop;
     private LocalDate date;
-    //    private int parking_place;
+    private String time_summary;
     @ManyToOne
     @JoinColumn(name = "fk_vehicle_id")
     private Vehicle vehicle;
@@ -25,14 +24,14 @@ public class Reservation implements Serializable {
     public Reservation() {
     }
 
-    public Reservation(int reservation_id, LocalTime start, LocalTime stop, LocalDate date, ReservationType type, Vehicle vehicle) {
+    public Reservation(int reservation_id, LocalTime start, LocalTime stop, LocalDate date, String time_summary, Vehicle vehicle, ReservationType type) {
         this.reservation_id = reservation_id;
         this.start = start;
         this.stop = stop;
         this.date = date;
-        this.type = type;
-//        this.parking_place = parking_place;
+        this.time_summary = time_summary;
         this.vehicle = vehicle;
+        this.type = type;
     }
 
     @Override
@@ -43,7 +42,7 @@ public class Reservation implements Serializable {
                 ", stop=" + stop +
                 ", date=" + date +
                 ", type=" + type +
-//                ", parking_place=" + parking_place +
+                ", time_summary=" + time_summary +
                 ", vehicle=" + vehicle +
                 '}';
     }
@@ -88,16 +87,20 @@ public class Reservation implements Serializable {
         this.type = type;
     }
 
-//    public int getParking_place() {
-//        return parking_place;
+    public String getTime_summary() {
+        return time_summary;
+    }
+
+    public void setTime_summary(String time_summary) {
+        this.time_summary = time_summary;
+    }
+
+    //    public Vehicle getVehicle() {
+//        return vehicle;
 //    }
 
-//    public void setParking_place(int parking_place) {
-//        this.parking_place = parking_place;
-//    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
+    public String getVehicle(){
+        return vehicle.getRegistration();
     }
 
     public void setVehicle(Vehicle vehicle) {

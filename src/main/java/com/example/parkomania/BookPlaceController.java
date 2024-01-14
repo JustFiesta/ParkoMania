@@ -73,8 +73,7 @@ public class BookPlaceController implements Initializable {
 
         //try to send transaction to db
         try {
-            //Debug
-            loggedUser.setUser_id(27);
+
             System.out.println("Debug: Fetching all plate numbers");
 
             transaction = session.beginTransaction();
@@ -136,19 +135,19 @@ public class BookPlaceController implements Initializable {
     }
 
     private void startCounting() {
-        System.out.println("Debug: Start odliczania, czas=" + LocalTime.now());
-        startAndStopImg.setImage(new Image("file:../images/20231219_161926_0011.png"));
+        System.out.println("Debug: Start counting: " + LocalTime.now());
 
+        URL stopImgStream = getClass().getResource("/com/example/parkomania/images/20231219_161926_0011.png");
+        Image stopImg = new Image(String.valueOf(stopImgStream));
+
+        startAndStopImg.setImage(stopImg);
 
         if (baseTime.equals(LocalTime.of(0, 0))) {
             //count up
             System.out.println("Debug: counting up");
             countingDown = false;
             stopTime = LocalTime.now();
-            startTime = null;
-
-            //TODO
-            //setting stop time correctly
+            startTime = LocalTime.now();
 
             sendReservationToDB(ReservationType.STARTSTOP);
         } else {
@@ -175,7 +174,12 @@ public class BookPlaceController implements Initializable {
     }
 
     private void stopCounting() {
-        startAndStopImg.setImage(new Image("file:../images/20231219_161926_0011.png"));
+
+        URL startImgStream = getClass().getResource("/com/example/parkomania/images/start.png");
+        Image startImg = new Image(String.valueOf(startImgStream));
+
+        startAndStopImg.setImage(startImg);
+
         timeline.stop();
 
         startTime = LocalTime.now();
@@ -189,8 +193,6 @@ public class BookPlaceController implements Initializable {
         updateLabel();
         choosingTimer.setText("00:00");
 
-        System.out.println("Debug: Koniec odliczania, czas=" + LocalTime.now());
-        System.out.println("Debug: Minuty trwania odliczania: " + elapsed.getMinute() + " minut");
         enableAddAndSubtractButtons();
 
         baseTime = LocalTime.of(0, 0);

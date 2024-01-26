@@ -69,6 +69,7 @@ public class DeleteVehicleController {
                 checkVehicle.clear();
 
                 sceneManager.loadScene("userData", "templates/userData.fxml");
+                sceneManager.loadScene("bookPlace", "templates/bookPlace.fxml");
                 sceneManager.switchScene("userData");
             } catch (Exception e) {
                 if (transaction != null) {
